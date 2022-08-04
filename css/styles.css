@@ -1,1 +1,18 @@
-body {}
+/* main css stylesheet */
+:root {
+    --var-name: #fff; /* var definition: --var-name: value */
+}
+
+* {
+    border: 1px solid black; /* delete: useful for prototyping */
+    box-sizing: border-box;
+    
+}
+
+html {
+    background-color: var(--var-name); /* var usage: var(--var-name) */
+}
+
+body {
+    font-family: sans-serif;
+}
