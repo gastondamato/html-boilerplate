@@ -1,6 +1,7 @@
 /* main css stylesheet */
 :root {
     --var-name: #fff; /* var definition: --var-name: value */
+                        /* compatibility issues with old browsers */
 }
 
 * {
