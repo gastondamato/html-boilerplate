@@ -2,6 +2,8 @@
 :root {
     --var-name: #fff; /* var definition: --var-name: value */
                         /* compatibility issues with old browsers */
+    --generaltypo: "Oxygen mono", monospace;
+    --logotypo: Oxygen, sans-serif;
 }
 
 * {
@@ -16,4 +18,48 @@ html {
 
 body {
     font-family: sans-serif;
+}
+
+/* nav.html */
+nav {
+    font-family: var(--generaltypo);
+    font-size: 80%;
+    padding: 1rem;
+}
+
+nav ul a {
+    font-family: var(--logotypo);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* logo selector */
+nav li:first-child {
+    flex-basis: 100%; /* Asign 100% width inside flex box making it in 1 line alone with the rest of the nav below */
+    text-align: center;
+}
+
+/* selects classes that starts with fa* (FontAwesome) */
+nav [class*="fa-"] {
+    font-size: 150%;
+    color: aqua;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+nav a:hover {
+    color: magenta;
 }
