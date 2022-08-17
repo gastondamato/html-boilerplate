@@ -1,19 +1,36 @@
-/* main css stylesheet */
+/* use */
+/* fonts from fonts.google.com */
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap');
+
+/* css var definition */
+/* get a color scheme from https://color.adobe.com/explore */
 :root {
     --var-name: #fff; /* var definition: --var-name: value */
                         /* compatibility issues with old browsers */
     --generaltypo: "Oxygen mono", monospace;
     --logotypo: Oxygen, sans-serif;
+    --prototype: #212d30;
+    --bggeneral: #2B3B3E;
+    --textcolor: #D6D6D6;
+    --calltoaction: #97BF06;
+    --hover: #D7D58A;
+    --attention: #929FBD;
+
 }
 
+/* you can test css online with https://codepen.io if you do not want to set an eviroment yet */
+/* main css stylesheet */
+
 * {
-    border: 1px solid black; /* delete: useful for prototyping */
+    /* delete: useful for prototyping */
+    border: 1px dotted var(--prototype); 
     box-sizing: border-box;
     
 }
 
 html {
-    background-color: var(--var-name); /* var usage: var(--var-name) */
+    background-color: var(--bggeneral); /* var usage: var(--var-name) */
 }
 
 body {
@@ -48,18 +65,53 @@ nav li:first-child {
     text-align: center;
 }
 
+nav li:first-child a{
+    color: var(--attention);
+}
+
 /* selects classes that starts with fa* (FontAwesome) */
 nav [class*="fa-"] {
     font-size: 150%;
-    color: aqua;
+    color: var(--attention);
 }
 
 nav a {
-    color: white;
+    color: var(--textcolor);
     text-decoration: none;
     display: block;
 }
 
 nav a:hover {
-    color: magenta;
+    color: var(--calltoaction);
+}
+
+.btnDownload {
+    color: var(--bggeneral);
+    background-color: var(--calltoaction);
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.btnDownload:hover {
+    color: var(--bggeneral);
+    background-color: var(--hover);
+}
+
+@media (min-width: 850px) {
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    nav li:first-child {
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto;
+    }
+
+}
+
+h2 {
+    color: var(--textcolor);
+    text-align: center;
 }
